@@ -1,0 +1,6 @@
+Note :- All Security code is in LoginAndValidation_Service 
+
+.../employee/xyz : 
+  send two headers 
+   1) Authorization : mkjabjjh  [means all token should be started with word mkj (orgKey in application.properties)]
+   2) uerType : which will be sent by RestTemplate itself
