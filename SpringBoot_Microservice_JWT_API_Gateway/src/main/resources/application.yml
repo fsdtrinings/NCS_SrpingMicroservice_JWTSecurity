@@ -1,0 +1,26 @@
+server:
+  port: 8089
+
+
+eureka: 
+ instance:
+  hostname: localhost
+    
+spring:
+  application:
+    name: api-gateway
+  cloud: 
+   gateway: 
+    routes: 
+     - id: NCS-LOGIN-SERVICE
+       uri: lb://NCS-LOGIN-SERVICE
+       predicates: 
+        - Path=/public/**
+     - id: NCS-EMPLOYEE-SERVICE
+       uri: lb://NCS-EMPLOYEE-SERVICE
+       predicates: 
+        - Path=/employee/**
+     - id: NCS-ADMIN-SERVICE
+       uri: lb://NCS-ADMIN-SERVICE
+       predicates: 
+        - Path=/admin/**    
